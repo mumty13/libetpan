@@ -115,7 +115,7 @@ export LANG=en_US.US-ASCII
 LIB_NAME=$ARCHIVE
 TARGETS="iPhoneOS iPhoneSimulator"
 
-SDK_IOS_MIN_VERSION=7.0
+SDK_IOS_MIN_VERSION=13.0
 SDK_IOS_VERSION="`xcodebuild -showsdks 2>/dev/null | grep iphoneos | sed 's/.*iphoneos\(.*\)/\1/'`"
 BUILD_DIR="$tmpdir/build"
 INSTALL_PATH="${BUILD_DIR}/${LIB_NAME}/universal"
@@ -184,13 +184,13 @@ for TARGET in $TARGETS; do
     case $TARGET in
         (iPhoneOS)
             ARCH=arm
-            MARCHS="armv7 armv7s arm64"
+            MARCHS="arm64"
             EXTRA_FLAGS="$BITCODE_FLAGS -miphoneos-version-min=$SDK_IOS_MIN_VERSION"
             TARGET_SUFFIX=""
             ;;
         (iPhoneSimulator)
-            ARCH=i386
-            MARCHS="i386 x86_64 arm64"
+            ARCH=x86_64
+            MARCHS="x86_64 arm64"
             EXTRA_FLAGS="$BITCODE_FLAGS -miphoneos-version-min=$SDK_IOS_MIN_VERSION"
             TARGET_SUFFIX="-simulator"
             ;;
