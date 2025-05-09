@@ -1,0 +1,13 @@
+CC = gcc
+CFLAGS = -Wall -g
+LDFLAGS = -L../src/.libs
+INCLUDES = -I../include
+LIBS = -letpan -lssl -lcrypto -lsasl2
+
+all: xallmail-test
+
+xallmail-test: xallmail-test.c
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $< $(LDFLAGS) $(LIBS)
+
+clean:
+	rm -f xallmail-test

@@ -1,7 +1,7 @@
 /*
  * libEtPan! -- a mail stuff library
  *
- * Copyright (C) 2001 - 2003 - DINH Viet Hoa
+ * Copyright (C) 2001, 2014 - DINH Viet Hoa
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -16,10 +16,10 @@
  *    contributors may be used to endorse or promote products derived
  *    from this software without specific prior written permission.
  *
- * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHORS AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
  * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
@@ -29,25 +29,47 @@
  * SUCH DAMAGE.
  */
 
-#ifndef LIBETPAN_VERSION_H
+ #ifndef XALLMAIL_H
 
-#define LIBETPAN_VERSION_H
+ #define XALLMAIL_H
 
-#ifndef LIBETPAN_VERSION_MAJOR
-#define LIBETPAN_VERSION_MAJOR 1
-#endif
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
 
-#ifndef LIBETPAN_VERSION_MINOR
-#define LIBETPAN_VERSION_MINOR 9
-#endif
+ #include <libetpan/mailimap_extension.h>
 
-#ifndef LIBETPAN_REENTRANT
-#if 1
-#define LIBETPAN_REENTRANT 1
-#endif
-#endif
+ /* X-ALL-MAIL is a Yahoo Mail extension that enables access to the "All Mail" virtual folder */
 
-int libetpan_get_version_major(void);
-int libetpan_get_version_minor(void);
+ /* Extension ID - this should match the value in mailimap_extension_types.h */
+ #define MAILIMAP_EXTENSION_XALLMAIL 14
 
-#endif
+ enum {
+   MAILIMAP_XALLMAIL_TYPE_MAILBOXID,
+   MAILIMAP_XALLMAIL_TYPE_RESP_TEXT_CODE
+ };
+
+ LIBETPAN_EXPORT
+ extern struct mailimap_extension_api mailimap_extension_xallmail;
+
+ /* Checks if the X-ALL-MAIL capability is supported by the server */
+ LIBETPAN_EXPORT
+ int mailimap_has_xallmail(mailimap * session);
+
+ /* Enables the X-ALL-MAIL capability on the server */
+ LIBETPAN_EXPORT
+ int mailimap_enable_xallmail(mailimap * session);
+
+ /* Creates a fetch attribute for MAILBOXID */
+ LIBETPAN_EXPORT
+ struct mailimap_fetch_att * mailimap_fetch_att_new_mailboxid(void);
+
+ /* Gets the MAILBOXID from the SELECT response */
+ LIBETPAN_EXPORT
+ int mailimap_get_mailboxid(mailimap * session, char ** p_mailboxid);
+
+ #ifdef __cplusplus
+ }
+ #endif
+
+ #endif

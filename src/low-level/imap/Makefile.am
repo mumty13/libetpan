@@ -49,7 +49,8 @@ etpaninclude_HEADERS = \
 	mailimap_sort.h mailimap_sort_types.h \
   mailimap_compress.h \
   mailimap_oauth2.h \
-  clientid.h
+  clientid.h \
+  xallmail.h
 
 AM_CPPFLAGS = -I$(top_builddir)/include \
 	-I$(top_srcdir)/src/data-types
@@ -104,4 +105,5 @@ libimap_la_SOURCES = \
   mailimap_compress.c mailimap_compress.h \
   mailimap_oauth2.c mailimap_oauth2.h \
   clientid_sender.c clientid_sender.h \
-  clientid.c clientid.h
+  clientid.c clientid.h \
+  xallmail.c xallmail.h
