@@ -50,7 +50,8 @@ etpaninclude_HEADERS = \
   mailimap_compress.h \
   mailimap_oauth2.h \
   clientid.h \
-  xallmail.h
+  xallmail.h \
+  capability-parse.h
 
 AM_CPPFLAGS = -I$(top_builddir)/include \
 	-I$(top_srcdir)/src/data-types
@@ -106,4 +107,5 @@ libimap_la_SOURCES = \
   mailimap_oauth2.c mailimap_oauth2.h \
   clientid_sender.c clientid_sender.h \
   clientid.c clientid.h \
-  xallmail.c xallmail.h
+  xallmail.c xallmail.h \
+  capability-parse.c capability-parse.h
