@@ -2,7 +2,7 @@
 
 set -e
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+# export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 version=2.1.28
 ARCHIVE=cyrus-sasl-$version

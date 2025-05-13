@@ -10,6 +10,11 @@ logfile="`pwd`/update.log"
 
 cd ..
 
+if [ ! -f "./configure" ]; then
+  echo "configure script not found. Running autoreconf -fi..."
+  autoreconf -fi
+fi
+
 if test "x$1" = xprepare ; then
   echo preparing
   ./autogen.sh > "$logfile" 2>&1
