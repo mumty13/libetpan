@@ -546,6 +546,12 @@
 		C6F9EDAB1053394C0059C3BA /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F9EDAA1053394C0059C3BA /* libiconv.dylib */; };
 		C6F9EDAD1053395A0059C3BA /* libexpat.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F9EDAC1053395A0059C3BA /* libexpat.dylib */; };
 		C6F9EDB2105339650059C3BA /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F9EDB1105339650059C3BA /* libcurl.dylib */; };
+		E738603A2DD3A96C00D4D54F /* capability-parse.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860372DD3A96C00D4D54F /* capability-parse.c */; };
+		E738603B2DD3A96C00D4D54F /* xallmail.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860392DD3A96C00D4D54F /* xallmail.c */; };
+		E738603C2DD3A96C00D4D54F /* capability-parse.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860372DD3A96C00D4D54F /* capability-parse.c */; };
+		E738603D2DD3A96C00D4D54F /* xallmail.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860392DD3A96C00D4D54F /* xallmail.c */; };
+		E738603E2DD3A96C00D4D54F /* capability-parse.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860372DD3A96C00D4D54F /* capability-parse.c */; };
+		E738603F2DD3A96C00D4D54F /* xallmail.c in Sources */ = {isa = PBXBuildFile; fileRef = E73860392DD3A96C00D4D54F /* xallmail.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -975,6 +981,10 @@
 		C6F9EDAC1053395A0059C3BA /* libexpat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libexpat.dylib; path = /usr/lib/libexpat.dylib; sourceTree = "<absolute>"; };
 		C6F9EDB1105339650059C3BA /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = /usr/lib/libcurl.dylib; sourceTree = "<absolute>"; };
 		C6F9EDBD105339EA0059C3BA /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		E73860362DD3A96C00D4D54F /* capability-parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "capability-parse.h"; sourceTree = "<group>"; };
+		E73860372DD3A96C00D4D54F /* capability-parse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "capability-parse.c"; sourceTree = "<group>"; };
+		E73860382DD3A96C00D4D54F /* xallmail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xallmail.h; sourceTree = "<group>"; };
+		E73860392DD3A96C00D4D54F /* xallmail.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xallmail.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1448,6 +1458,10 @@
 		C6F9E9D3105335BC0059C3BA /* imap */ = {
 			isa = PBXGroup;
 			children = (
+				E73860362DD3A96C00D4D54F /* capability-parse.h */,
+				E73860372DD3A96C00D4D54F /* capability-parse.c */,
+				E73860382DD3A96C00D4D54F /* xallmail.h */,
+				E73860392DD3A96C00D4D54F /* xallmail.c */,
 				C6F9E9EE105335BC0059C3BA /* acl.c */,
 				C6F9E9EF105335BC0059C3BA /* acl.h */,
 				C6F9E9F0105335BC0059C3BA /* acl_parser.c */,
@@ -1998,6 +2012,8 @@
 				C6F9EC83105335BD0059C3BA /* annotatemore_sender.c in Sources */,
 				C6F9EC85105335BD0059C3BA /* annotatemore_types.c in Sources */,
 				C6F9EC87105335BD0059C3BA /* idle.c in Sources */,
+				E738603C2DD3A96C00D4D54F /* capability-parse.c in Sources */,
+				E738603D2DD3A96C00D4D54F /* xallmail.c in Sources */,
 				C6F9EC89105335BD0059C3BA /* mailimap.c in Sources */,
 				C6F9EC8B105335BD0059C3BA /* mailimap_extension.c in Sources */,
 				C6F9EC8E105335BD0059C3BA /* mailimap_helper.c in Sources */,
@@ -2182,6 +2198,8 @@
 				C682E27F15B315EF00BE9DA7 /* mailstream_helper.c in Sources */,
 				C682E28015B315EF00BE9DA7 /* mailstream_low.c in Sources */,
 				C682E28115B315EF00BE9DA7 /* mailstream_socket.c in Sources */,
+				E738603E2DD3A96C00D4D54F /* capability-parse.c in Sources */,
+				E738603F2DD3A96C00D4D54F /* xallmail.c in Sources */,
 				C682E28215B315EF00BE9DA7 /* mailstream_ssl.c in Sources */,
 				C682E28315B315EF00BE9DA7 /* mailthread.c in Sources */,
 				C682E28415B315EF00BE9DA7 /* mailthread_types.c in Sources */,
@@ -2366,6 +2384,8 @@
 				C69AB2721054704000F32FBD /* mailstream_helper.c in Sources */,
 				C69AB2741054704000F32FBD /* mailstream_low.c in Sources */,
 				C69AB2761054704000F32FBD /* mailstream_socket.c in Sources */,
+				E738603A2DD3A96C00D4D54F /* capability-parse.c in Sources */,
+				E738603B2DD3A96C00D4D54F /* xallmail.c in Sources */,
 				C69AB2781054704000F32FBD /* mailstream_ssl.c in Sources */,
 				C69AB27C1054704000F32FBD /* mailthread.c in Sources */,
 				C69AB27E1054704000F32FBD /* mailthread_types.c in Sources */,

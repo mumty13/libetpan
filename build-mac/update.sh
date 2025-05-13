@@ -1,4 +1,7 @@
 #!/bin/sh
+
+export PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
+
 if test ! -d libetpan.xcodeproj ; then
 	exit 1;
 fi
